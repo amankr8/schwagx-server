@@ -14,6 +14,7 @@ app.use(cors())
 
 app.use('/swags', require('./components/routes/swags'))
 app.use('/users', require('./components/routes/users'))
+app.use('/category', require('./components/routes/category'))
 
 app.get('/', (req, res) => {
   res.render('index')
