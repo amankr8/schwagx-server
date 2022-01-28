@@ -13,6 +13,7 @@ app.use(express.urlencoded({ extended: false }))
 app.use(cors())
 
 app.use('/swags', require('./components/routes/swags'))
+app.use('/users', require('./components/routes/users'))
 
 app.get('/', (req, res) => {
   res.render('index')
