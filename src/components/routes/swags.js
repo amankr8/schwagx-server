@@ -5,9 +5,9 @@ const router = express.Router();
 const auth = require('../../middleware/auth');
 
 router.get('/', getSwags);
-router.post('/', auth, createSwag);
+router.post('/', createSwag);
 router.get('/:id', getSwag);
-router.put('/:id', auth, updateSwag);
-router.delete('/:id', auth, deleteSwag);
+router.put('/:id', updateSwag);
+router.delete('/:id', deleteSwag);
 
 module.exports = router;
