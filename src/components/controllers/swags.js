@@ -1,5 +1,7 @@
 const Swag = require('../models/Swag')
 
+
+//get all swags
 exports.getSwags = async (req, res) => {
     try {
         const swags = await Swag.find();
@@ -9,6 +11,7 @@ exports.getSwags = async (req, res) => {
     }
 }
 
+//add new swag
 exports.createSwag = async (req, res) => {
     try {
         const newSwag = new Swag(req.body)
@@ -19,6 +22,7 @@ exports.createSwag = async (req, res) => {
     }
 }
 
+//get swag by id
 exports.getSwag = async (req, res) => {
     try {
         const swag = await Swag.findById(req.params.id);
@@ -28,6 +32,7 @@ exports.getSwag = async (req, res) => {
     }
 }
 
+//update swag by id
 exports.updateSwag = async (req, res) => {
     try {
         const update = req.body
@@ -38,6 +43,7 @@ exports.updateSwag = async (req, res) => {
     }
 }
 
+//delete swag by id
 exports.deleteSwag = async (req, res) => {
     try {
         await Swag.findByIdAndDelete(req.params.id)
@@ -46,3 +52,26 @@ exports.deleteSwag = async (req, res) => {
         console.error(err)
     }
 }
+
+// get swags by owner id
+exports.getUserSwags = async (req, res) => {
+    try {
+        console.log(req.params.id);
+        const swag = await Swag.find({ owner: req.params.id});
+        res.json(swag)
+    } catch (err) {
+        console.error(err)
+    }
+};
+
+
+// get swags by category id
+exports.getCategorySwags = async (req, res) => {
+    try {
+        console.log(req.params.id);
+        const swag = await Swag.find({ category: req.params.id });
+        res.json(swag)
+    } catch (err) {
+        console.error(err)
+    }
+};
