@@ -4,6 +4,7 @@ const router = express.Router();
 
 const auth = require('../../middleware/auth');
 
+// baseURL: https://schwagx.herokuapp.com/swags/
 router.get('/', getSwags);
 router.get('/owner/:id', getUserSwags);
 router.get('/category/:id', getCategorySwags);
