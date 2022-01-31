@@ -3,31 +3,21 @@ const mongoose = require('mongoose')
 const swagSchema = new mongoose.Schema({
     name: {
       type: String,
-      required: true,
+      required: true
     },
     description: {
       type: String,
-      required: true,
-    },
-    size: {
-      type: String,
-      required: true,
-    },
-    count: {
-      type: Number,
-      required: true,
+      required: true
     },
     owner: {
       type: String,
-      required: true,
+      required: true
     },
     category: {
-      type: String,
-      required: true,
+      type: String
     },
     image: {
-      type: String,
-      required: true,
+      type: String
     }
 }, { versionKey: false })
 
