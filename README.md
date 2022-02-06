@@ -1,2 +1,2 @@
 # schwagx-server
-server side of schwagx 
+server side of schwagx
